@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- Made in Framer · framer.com ✨ -->
 <!-- Published Sep 9, 2026 at 3:45 PM UTC -->
 <html lang="en" data-redirect-timezone="1">
 <head>
@@ -148,8 +147,16 @@
     
     <!-- End of headEnd -->
 	
-	<style>#__framer-badge-container{display:none!important}#template-overlay{display:none!important}</style>
-<style>#__framer-badge-container{display:none!important}#template-overlay{display:none!important}</style>
+	<style>#__framer-badge-container,#template-overlay,.__framer-badge{display:none!important}</style>
+	<script>
+		(() => {
+			const removeFramerBadge = () => {
+				document.querySelectorAll('#__framer-badge-container, .__framer-badge').forEach((element) => element.remove());
+			};
+			new MutationObserver(removeFramerBadge).observe(document.documentElement, { childList: true, subtree: true });
+			removeFramerBadge();
+		})();
+	</script>
 </head>
 <body>
 	
